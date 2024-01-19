@@ -11,6 +11,7 @@ async function getCounter() {
         client.close();
         return resp.data.count;
     } catch(e) {
+        console.log("error getting counter:", e);
         client.close();
         return "unknown";
     }
