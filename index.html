@@ -26,7 +26,7 @@
                 const th = (tmin / 60) >> 0;
                 const h = th % 24;
                 const d = (th/24)>>0;
-                counter.innerText=`${{d}} days ${{h}} hours ${{min}} minutes ${{sec}} seconds`;
+                counter.innerText=`${d} days ${h} hours ${min} minutes ${sec} seconds`;
                 setTimeout(updateCounter, 1000 - now.getMilliseconds());
             }
             updateCounter();
