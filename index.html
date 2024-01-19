@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Fortnite Feet Wiki</title>
+    </head>
+    <body>
+        <h1>tociej is a lazy fuck</h1>
+        <button id="incbutton">agree: unavailable</button>
+        <p style="font-style:italic;">yeah, i will do it</p>
+        <p>will you? <span id="counter"></span></p>
+        <script>
+            const btn = document.getElementById("incbutton");
+            const counter = document.getElementById("counter");
+            /*btn.addEventListener("click", () => {
+                fetch("/increment", {method: "POST"})
+                    .then(resp => location.reload());
+            });*/
+            function updateCounter() {
+                const now = new Date();
+                const diff = ((now.getTime()/1000)>>0) - 1684101600;
+                const sec = diff % 60;
+                const tmin = (diff / 60) >> 0;
+                const min = tmin % 60;
+                const th = (tmin / 60) >> 0;
+                const h = th % 24;
+                const d = (th/24)>>0;
+                counter.innerText=`${{d}} days ${{h}} hours ${{min}} minutes ${{sec}} seconds`;
+                setTimeout(updateCounter, 1000 - now.getMilliseconds());
+            }
+            updateCounter();
+        </script>
+    </body>
+</html>
