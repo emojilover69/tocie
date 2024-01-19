@@ -1,0 +1,8 @@
+{
+  "name": "tocie",
+  "version": "1.0.0",
+  "author": "emojilover69",
+  "dependencies": {
+    "fauna": "^1.3.1"
+  }
+}
