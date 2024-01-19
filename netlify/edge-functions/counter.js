@@ -25,4 +25,4 @@ export default async function handler(req, context) {
     return new Response(updatedPage, response);
 }
 
-const const config = { path: '/' };
+export const config = { path: '/' };
