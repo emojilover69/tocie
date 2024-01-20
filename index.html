@@ -7,16 +7,20 @@
     </head>
     <body>
         <h1>tociej is a lazy fuck</h1>
-        <button id="incbutton">agree: unavailable</button>
+        <button id="incbutton">agree: {{COUNTER}}</button>
         <p style="font-style:italic;">yeah, i will do it</p>
         <p>will you? <span id="counter"></span></p>
         <script>
             const btn = document.getElementById("incbutton");
             const counter = document.getElementById("counter");
-            /*btn.addEventListener("click", () => {
-                fetch("/increment", {method: "POST"})
-                    .then(resp => location.reload());
-            });*/
+            btn.addEventListener("click", () => {
+                btn.disabled = true;
+                fetch("/.netlify/functions/increment")
+                    .then(resp => resp.json())
+                    .then(data => btn.innerText = `agree: ${data.counter}`)
+                    .catch(() => alert("We seem to disagree"))
+                    .finally(() => btn.disabled = false);
+            });
             function updateCounter() {
                 const now = new Date();
                 const diff = ((now.getTime()/1000)>>0) - 1684101600;
